@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login • TravelGuide</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+<!-- 🌊 Background Video -->
+<video autoplay muted loop class="bg-video">
+  <source src="video/travel.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- 🔐 Login Card -->
+<div class="auth-card">
+  <h2>🌊 Welcome Back Explorer</h2>
+  <p>Your ocean of journeys awaits</p>
+
+  <input type="text" placeholder="Email">
+  <input type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+
+  <p>New here? <a href="signup.html">Create account</a></p>
+</div>
+
+<script>
+function login(){
+  window.location.href="index.html"; 
+}
+</script>
+
+</body>
+</html>
