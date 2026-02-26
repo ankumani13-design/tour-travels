@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Blue Horizon</title>
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+  <div class="auth-navbar">
+    <div class="auth-logo-left">Blue Horizon</div>
+  </div>
+
+  <div class="main-wrapper">
+    <div class="auth-text">
+      <h1 class="auth-logo">Welcome Back Explorer</h1>
+      <p class="auth-sub">Your next adventure is waiting for you ✈</p>
+    </div>
+
+    <div class="auth-card">
+      <h2>Blue Horizon Login ✈</h2>
+
+      <input type="text" id="username" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+
+      <!-- ✅ FIX: Added id -->
+      <button id="loginBtn" onclick="login()">Login</button>
+
+      <p id="loginError" style="color:red; margin-top:10px;"></p>
+
+      <p>Don't have an account? <a href="signup.html">Signup</a></p>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
