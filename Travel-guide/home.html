@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blue Horizon</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Blue Horizon</div>
+  <ul class="menu-right">
+  <li><a href="about.html">About</a></li>
+
+  <li class="services">
+      <a href="#">Services </a>
+      <div class="dropdown">
+        <a href="#">🏨 Hotels</a>
+        <a href="#">🏡 Villas</a>
+        <a href="#">🎒 Hostels</a>
+        <hr>
+        <a href="#">✈️ Flights</a>
+        <a href="#">🚗 Car Rental</a>
+        <a href="#">🚕 Airport Pickup</a>
+        <hr>
+        <a href="#">🎟️ Attractions</a>
+      </div>
+    
+    <li><a href="#" id="logoutBtn">Logout</a></li>
+    </li>
+     <button id="themeToggle" class="theme-btn">🌙</button>
+  </li>
+  </ul>
+</header>
+
+<!-- 🎬 VIDEO HERO WITH SEARCH -->
+<section class="hero">
+  <video autoplay muted loop class="bg-video">
+    <source src="video/travel.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay"></div>
+
+  <div class="search-box">
+    <div class="input-group">
+      <label>Destination</label>
+      <input type="text" placeholder="Where to?" />
+    </div>
+
+    <div class="input-group">
+      <label>Check-in</label>
+      <input type="date" />
+    </div>
+
+    <div class="input-group">
+      <label>Check-out</label>
+      <input type="date" />
+    </div>
+
+    <div class="range-box">
+      <label>Budget</label>
+      <span id="budgetValue">₹2000</span>
+      <input type="range" min="500" max="20000" value="2000" id="budgetRange" />
+    </div>
+
+    <button>Search</button>
+  </div>
+</section>
+
+<!-- 🌍 TRAVEL BEYOND -->
+<section class="travel-beyond">
+  <h1>Travel beyond maps, into memories</h1>
+  <p class="subtitle">
+    Where every journey becomes a story, and every destination feels like home.  
+    Discover the world with elegance and ease.
+  </p>
+
+  <div class="tb-buttons">
+    <button class="primary">Explore Trips</button>
+    <button class="secondary">View Packages</button>
+  </div>
+</section>
+
+<!-- 🖼️ TOP DESTINATIONS -->
+<section class="top-destinations">
+  <h2>Top Destinations Await You</h2>
+  <p>Curated escapes to the world's most breathtaking corners</p>
+
+  <div class="dest-grid">
+    <div class="dest-card" onclick="openDetails('Goa')">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <div class="overlay-card">Goa – Beaches & Nightlife</div>
+    </div>
+
+    <div class="dest-card" onclick="openDetails('Santorini')">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <div class="overlay-card">Santorini – White & Blue</div>
+    </div>
+
+    <div class="dest-card" onclick="openDetails('Bali')">
+      <img src="https://images.unsplash.com/photo-1540206395-68808572332f">
+      <div class="overlay-card">Bali – Nature & Temples</div>
+    </div>
+
+    <div class="dest-card" onclick="openDetails('Switzerland')">
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2">
+      <div class="overlay-card">Switzerland – Alps & Snow</div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="features-text">
+    <h2>Unforgettable Travel Experiences</h2>
+    <p>
+      Travel Beyond is not just about destinations – it’s about experiences that stay with you forever.  
+      Discover handpicked adventures, local cultures, luxury stays, and seamless journeys.
+    </p>
+
+    <div class="features-list">
+      <div class="feature-item">
+        <h4>✔ Curated Trips</h4>
+        <p>Handcrafted itineraries for every traveler.</p>
+      </div>
+      <div class="feature-item">
+        <h4>✔ Best Price Guarantee</h4>
+        <p>Affordable packages without compromise.</p>
+      </div>
+      <div class="feature-item">
+        <h4>✔ Expert Guides</h4>
+        <p>Local experts to guide your journey.</p>
+      </div>
+      <div class="feature-item">
+        <h4>✔ 24/7 Support</h4>
+        <p>We are here for you anytime, anywhere.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-images">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="">
+  </div>
+</section>
+
+
+<!-- 🧭 FEATURES -->
+<section class="features">
+  <div class="feature">🌍 Handpicked Destinations</div>
+  <div class="feature">💼 Expert Travel Guides</div>
+  <div class="feature">💳 Secure Payments</div>
+  <div class="feature">📞 24/7 Support</div>
+</section>
+
+<!-- 🧾 FOOTER -->
+<footer class="footer">
+  <p>© 2026 Blue Horizon. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  const serviceMenu = document.querySelector(".services");
+  const dropdown = document.querySelector(".dropdown");
+
+  serviceMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+  });
+
+  document.addEventListener("click", () => {
+    dropdown.classList.remove("show");
+  });
+</script>
+</script>
+
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
+    }
+  });
+</script>
+
+</body>
+</html>

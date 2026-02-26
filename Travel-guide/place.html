@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place Details</title>
+  <style>
+    body{
+      font-family:Arial;
+      padding:50px;
+      background:#f3f8fc;
+    }
+    .box{
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1 id="placeName"></h1>
+  <p>Beautiful destination with amazing culture, food and landscapes.</p>
+  <a href="home.html">⬅ Back to Home</a>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("placeName").innerText = params.get("place");
+</script>
+
+</body>
+</html>
